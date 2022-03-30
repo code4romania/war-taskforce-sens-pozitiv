@@ -1,0 +1,17 @@
+{% extends 'admin/index.html' %}
+{% load i18n admin_urls static admin_modify %}
+{%load plotly_dash%}
+
+
+{% block content %}
+
+{% plotly_header %}
+
+<div style="width: 100%;">
+    {%plotly_direct name="sens_pozitivAdminDash" %}
+</div>
+
+{% plotly_footer %}
+
+{% comment %} {{ block.super }} {% endcomment %}
+{% endblock %}

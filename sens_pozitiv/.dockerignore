@@ -1,0 +1,7 @@
+tests/
+requirements-dev.in
+requirements.in
+setup.cfg
+venv
+virtualenv
+*__pycache__*

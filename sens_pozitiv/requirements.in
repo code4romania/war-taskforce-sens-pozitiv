@@ -1,0 +1,46 @@
+# django and related apps
+django>=3.2,<3.3
+django-environ
+django-storages
+django-crispy-forms
+django-recaptcha
+django-ckeditor
+django-multiselectfield
+django-phonenumber-field[phonenumbers]
+
+# django admin dashboard
+django-jazzmin
+django-import-export
+
+# dashboard charts
+django-plotly-dash
+dpd_components
+# enforced older version for compatibility w/ django-plotly-dash which is not dash2 compatible
+dash_bootstrap_components==0.13.0
+dpd-static-support
+
+# scheduler
+django-q
+django-q-email
+supervisor
+
+# py caching
+# pymemcache
+
+# slack error logging
+requests
+
+# database
+psycopg2<2.10
+dj-database-url
+
+# data analysis
+pandas
+xlsxwriter
+
+# file handling
+whitenoise
+
+# wsgi server
+gunicorn
+gevent

@@ -1,0 +1,52 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Ukraine Child Cancer Help{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static "site/css/main.css" %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {% block styles %}{% endblock %}
+
+</head>
+
+<body class="flex flex-col min-h-screen antialiased">
+
+    <div class="bg-gray-100">
+        <div class="container flex items-center py-3 mx-auto">
+            <img class="fill-current h-6" src="{% static "site/img/code4-logo.svg" %}" alt="">
+
+            <div class="ml-6 text-sm font-medium text-gray-700">
+                <span>{% trans "A Code for Romania project." %}</span>
+                <a href="https://www.code4.ro/" target="_blank" rel="noopener"
+                    class="text-blue-600 hover:underline whitespace-nowrap">{% trans "Find out more" %}</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="relative bg-gray-50">
+        <div class="container py-12 lg:py-8 mx-auto">
+            <div class="md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1 px-2">
+                    © {% now "Y" %} Ukraine Child Cancer Help Romania. {% trans "A Code for Romania project." %}
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

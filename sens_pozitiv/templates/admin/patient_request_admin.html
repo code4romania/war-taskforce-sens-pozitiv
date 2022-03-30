@@ -1,0 +1,234 @@
+{% extends 'admin/change_form.html' %}
+{% load i18n admin_urls static admin_modify %}
+{% block extrajs %}
+{{ block.super }}
+<script type="text/javascript">
+    let initFormFields = function () {
+
+        switch ($('#id_requester_category').find('option:selected').val()) {
+            case "PER":
+                $('.field-institution_name').hide();
+                $('#id_institution_name').attr('value', '');
+                break;
+            default:
+                $('.field-institution_name').show();
+                break;
+        }
+
+        switch ($('#id_known_complete_diagnostic').find('option:selected').val()) {
+            case "1":
+                $('.field-complete_diagnostic').show();
+                $('.field-date_diagnosed').show();
+                $('.field-diagnosing_institution_name').show();
+                $('.field-main_diagnostic_icd10').show();
+                $('.field-comorbidities_icd10').show();
+                $('.field-general_problem_description').hide();
+                $('#id_general_problem_description').val('');
+                break;
+            case "0":
+                $('.field-complete_diagnostic').hide();
+                $('.field-date_diagnosed').hide();
+                $('.field-diagnosing_institution_name').hide();
+                $('.field-main_diagnostic_icd10').hide();
+                $('.field-comorbidities_icd10').hide();
+                $('#id_complete_diagnostic').val('');
+                $('#id_date_diagnosed').val('');
+                $('#id_diagnosing_institution_name').val('');
+                $('#id_main_diagnostic_icd10').val('');
+                $('#id_comorbidities_icd10').val('');
+                $('.field-general_problem_description').show();
+                break;
+        }
+
+        if ($('#id_therapy_needs_8').is(":checked")) {
+            $('.field-other_therapy_needs').show();
+        } else {
+            $('.field-other_therapy_needs').hide();
+            $('#id_other_therapy_needs').val('');
+        }
+
+        // Logistic & accommodation
+
+        // Transport
+        if ($('#id_logsol_assistance-0-transport_rep_external').is(":checked")) {
+            $('.field-transport_rep_external_details').show();
+        } else {
+            $('.field-transport_rep_external_details').hide();
+            $('#id_logsol_assistance-0-transport_rep_external_details').val('');
+        }
+
+        if ($('#id_logsol_assistance-0-transport_required').is(":checked")) {
+            $('.field-transport').show();
+            $('.field-pick_up_location').show();
+            $('.field-destination_location').show();
+            $('.field-transport_details').show();
+            $('.field-transport_rep_external').show();
+            $('.field-transport_status').show();
+        } else {
+            $('.field-transport').hide();
+            $('.field-pick_up_location').hide();
+            $('.field-destination_location').hide();
+            $('.field-transport_details').hide();
+            $('.field-transport_rep_external').hide();
+            $('.field-transport_status').hide();
+
+            $('#id_logsol_assistance-0-transport_rep_external').prop('checked', false);
+            $('.field-transport_rep_external_details').hide();
+        }
+
+        // Accommodation
+        if ($('#id_logsol_assistance-0-accommodation_rep_external').is(":checked")) {
+            $('.field-accommodation_rep_external_details').show();
+        } else {
+            $('.field-accommodation_rep_external_details').hide();
+            $('#id_logsol_assistance-0-accommodation_rep_external_details').val('');
+        }
+
+        if ($('#id_logsol_assistance-0-accommodation_required').is(":checked")) {
+            $('.field-accommodation_details').show();
+            $('.field-accommodation_rep_external').show();
+            $('.field-accommodation_status').show();
+        } else {
+            $('.field-accommodation_details').hide();
+            $('.field-accommodation_rep_external').hide();
+            $('.field-accommodation_status').hide();
+
+            $('#id_logsol_assistance-0-accommodation_rep_external').prop('checked', false);
+            $('.field-accommodation_rep_external_details').hide();
+        }
+
+        // Assistance
+        if ($('#id_logsol_assistance-0-assistance_rep_external').is(":checked")) {
+            $('.field-assistance_rep_external_details').show();
+        } else {
+            $('.field-assistance_rep_external_details').hide();
+            $('#id_logsol_assistance-0-assistance_rep_external_details').val('');
+        }
+
+        if ($('#id_logsol_assistance-0-assistance_required').is(":checked")) {
+            $('.field-assistance_rep_external').show();
+            $('.field-assistance_status').show();
+        } else {
+            $('.field-assistance_rep_external').hide();
+            $('.field-assistance_status').hide();
+
+            $('#id_logsol_assistance-0-assistance_rep_external').prop('checked', false);
+            $('.field-assistance_rep_external_details').hide();
+        }
+
+        // Medical Assistance
+        switch ($('#id_med_assistance-0-case_status').find('option:selected').val()) {
+            case "R": // "Clinic is Ready for takeover"
+                $('.field-estimated_arrival_date').show();
+
+                $('.field-hospitalization_start').hide();
+                $('.field-receiving_dr_full_name').hide();
+                $('.field-comments').hide();
+
+                $('.field-international_redirect').hide();
+                $('.field-redirect_institution').hide();
+                $('.field-specialty').hide();
+                $('.field-location').hide();
+                $('.field-reason').hide();
+                $('#id_med_assistance-0-international_redirect').prop('checked', false);
+                $('#id_med_assistance-0-redirect_institution').val('');
+                $('#id_med_assistance-0-specialty').val('');
+                $('#id_med_assistance-0-location').val('');
+                $('#id_med_assistance-0-reason').val('');
+
+                break;
+            case "P": // "Case Pending"
+                $('.field-estimated_arrival_date').hide();
+                $('#id_med_assistance-0-estimated_arrival_date').val('');
+
+                $('.field-estimated_arrival_date').hide();
+                $('.field-hospitalization_start').hide();
+                $('.field-receiving_dr_full_name').hide();
+                $('.field-comments').hide();
+
+                $('.field-international_redirect').hide();
+                $('.field-redirect_institution').hide();
+                $('.field-specialty').hide();
+                $('.field-location').hide();
+                $('.field-reason').hide();
+                $('#id_med_assistance-0-international_redirect').prop('checked', false);
+                $('#id_med_assistance-0-redirect_institution').val('');
+                $('#id_med_assistance-0-specialty').val('');
+                $('#id_med_assistance-0-location').val('');
+                $('#id_med_assistance-0-reason').val('');
+
+                break;
+            case "RE": // "Redirected"
+                $('.field-international_redirect').show();
+                $('.field-redirect_institution').show();
+                $('.field-specialty').show();
+                $('.field-location').show();
+                $('.field-reason').show();
+
+                break;
+            default:
+                $('.field-estimated_arrival_date').hide();
+
+                $('.field-estimated_arrival_date').show();
+                $('.field-hospitalization_start').show();
+                $('.field-receiving_dr_full_name').show();
+                $('.field-comments').show();
+
+                $('.field-international_redirect').hide();
+                $('.field-redirect_institution').hide();
+                $('.field-specialty').hide();
+                $('.field-location').hide();
+                $('.field-country').hide();
+                $('.field-reason').hide();
+                $('#id_med_assistance-0-international_redirect').prop('checked', false);
+                $('#id_med_assistance-0-redirect_institution').val('');
+                $('#id_med_assistance-0-specialty').val('');
+                $('#id_med_assistance-0-location').val('');
+                $('#id_med_assistance-0-country').val('');
+                $('#id_med_assistance-0-reason').val('');
+
+                break;
+        }
+
+    }
+
+
+    $('#id_requester_category').change(function () {
+        initFormFields();
+    });
+    $('#id_known_complete_diagnostic').change(function () {
+        initFormFields();
+    });
+    $('#id_therapy_needs_8').change(function () {
+        initFormFields();
+    });
+
+    // Logistic & Accommodation
+    $('#id_logsol_assistance-0-transport_required').change(function () {
+        initFormFields();
+    });
+    $('#id_logsol_assistance-0-transport_rep_external').change(function () {
+        initFormFields();
+    });
+    $('#id_logsol_assistance-0-accommodation_required').change(function () {
+        initFormFields();
+    });
+    $('#id_logsol_assistance-0-accommodation_rep_external').change(function () {
+        initFormFields();
+    });
+    $('#id_logsol_assistance-0-assistance_required').change(function () {
+        initFormFields();
+    });
+    $('#id_logsol_assistance-0-assistance_rep_external').change(function () {
+        initFormFields();
+    });
+
+    // Medical Assistance
+    $('#id_med_assistance-0-case_status').change(function () {
+        initFormFields();
+    });
+
+    initFormFields();
+
+</script>
+{% endblock %}

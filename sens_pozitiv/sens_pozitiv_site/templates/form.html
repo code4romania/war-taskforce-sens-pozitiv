@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}UCCH - {% trans "Patient Request Form" %}{% endblock %}
+
+{% block content %}
+
+<div class="container py-4 px-2 mx-auto">
+    <div class="grid md:grid-cols-6 gap-4">
+
+        <div class="md:col-start-1 md:col-span-2 lg:col-start-2 lg:col-span-1">
+            {% comment %} <img class="h-14 max-w-38 sm:max-w-54" src="{% static "site/img/ucch-logo.png" %}" alt="">
+            {% endcomment %}
+        </div>
+
+        <div class="md:col-span-3">
+            <div class="text-2xl mt-3">{% trans "Patient Request Form" %}</div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-6 gap-4 py-4">
+        <div class="col-start-0 col-span-6 md:col-start-1 md:col-span-5 lg:col-start-2 lg:col-span-4">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% else %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.non_field_errors }}
+
+                {% for hidden_field in form.hidden_fields %}
+                {% if hidden_field.errors %}
+                <div class="alert alert-danger" role="alert">{% trans "Errors" %} "{{ hidden_field.label }}":
+                    {{ hidden_field.errors }}</div>
+                {% endif %}
+                {% endfor %}
+
+                {% for field in form %}
+                {% if field.errors %}
+                <div class="alert alert-danger" role="alert">{% trans "Errors" %} "{{ field.label }}":
+                    {{ field.errors }}</div>
+                {% endif %}
+                {% endfor %}
+
+                {{ form|crispy }}
+
+                <button class="btn btn-primary btn-lg float-right" type="submit">{% trans "Send request" %}
+                    &vrtri;</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#id_birth_date").attr("type", "date").attr("pattern", "\d{4}-\d{2}-\d{2}").attr("max",
+            "{% now 'Y-m-d' %}");
+        $("#id_date_diagnosed").attr("type", "date").attr("pattern", "\d{4}-\d{2}-\d{2}").attr("max",
+            "{% now 'Y-m-d' %}");
+
+        $("#div_id_complete_diagnostic").hide();
+        $("#div_id_date_diagnosed").hide();
+        $("#div_id_diagnosing_institution_name").hide();
+        $("#div_id_other_therapy_needs").hide();
+
+        $("#id_known_complete_diagnostic").change(function () {
+            if ($(this).val() == "1") {
+                $("#div_id_complete_diagnostic").show();
+                $("#div_id_date_diagnosed").show();
+                $("#div_id_diagnosing_institution_name").show();
+                $("#div_id_general_problem_description").hide();
+            } else {
+                $("#div_id_general_problem_description").show();
+                $("#div_id_complete_diagnostic").hide();
+                $("#div_id_date_diagnosed").hide();
+                $("#div_id_diagnosing_institution_name").hide();
+            }
+        });
+
+        $("#id_therapy_needs_8").change(function () {
+            if ($(this).is(":checked")) {
+                $("#div_id_other_therapy_needs").show();
+            } else {
+                $("#div_id_other_therapy_needs").hide();
+            }
+        });
+
+        $("#id_requester_category").change(function () {
+            if ($(this).val() == "PER") {
+                $("#div_id_institution_name").hide();
+            } else {
+                $("#div_id_institution_name").show();
+            }
+        });
+
+    });
+
+</script>
+
+{% endblock %}

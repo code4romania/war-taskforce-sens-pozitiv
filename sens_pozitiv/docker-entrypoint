@@ -1,0 +1,44 @@
+#!/bin/bash
+
+APP_PORT=${APP_PORT:-"8070"}
+
+RUN_MIGRATION=${RUN_MIGRATION:-"yes"}
+RUN_COMPILEMESSAGES=${RUN_COMPILEMESSAGES:-"yes"}
+RUN_SEED_DATA=${RUN_SEED_DATA:-"no"}
+RUN_COLLECT_STATIC=${RUN_COLLECT_STATIC:-"yes"}
+RUN_DEV_SERVER=${RUN_DEV_SERVER:-"no"}
+
+echo "Run basic health checks"
+./manage.py check
+
+if [[ ${RUN_MIGRATION} = "yes" ]] ; then
+  echo "Run database migrations"
+  ./manage.py migrate
+fi
+
+if [[ ${RUN_COMPILEMESSAGES} = "yes" ]] ; then
+  echo "Compile i18n messages"
+  ./manage.py compilemessages
+fi
+
+if [[ ${RUN_SEED_DATA} = "yes" ]] ; then
+  echo "Load seed data in the database"
+  ./manage.py seed_groups
+  ./manage.py seed_email_templates
+  ./manage.py seed_superuser
+fi
+
+if [[ ${RUN_COLLECT_STATIC} = "yes" ]] ; then
+  echo "Collect static files (this will take a while)"
+  ./manage.py collectstatic --no-input
+fi
+
+echo "Starting Django Q Scheduler via supervisord"
+supervisord -c supervisord.conf
+
+if [[ ${RUN_DEV_SERVER} = "yes" ]] ; then
+  echo "Start web server on ${APP_PORT}"
+  ./manage.py runserver_plus "0.0.0.0:${APP_PORT}"
+else
+  gunicorn sens_pozitiv_site.wsgi --bind "0.0.0.0:${APP_PORT}" --log-level info -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
+fi
