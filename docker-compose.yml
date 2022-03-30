@@ -31,7 +31,7 @@ services:
     container_name: senspozitiv-admin
     build:
       context: ./sens_pozitiv
-    command: dockerize -wait tcp://db:5432 -timeout 90s
+    command: dockerize -wait tcp://db-senspozitiv:5432 -timeout 90s
     env_file:
       - .env
     networks:
