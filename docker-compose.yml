@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  db:
+  db-senspozitiv:
     container_name: senspozitiv-db
     build:
       context: ./db
@@ -41,7 +41,7 @@ services:
     ports:
       - "8070:8070"
     depends_on:
-      - db
+      - db-senspozitiv
       - redis
 
 networks:
