@@ -49,7 +49,7 @@ Urgențe medicale asociate HIV sau altele: {{ pr.medical_urgencies }}
 
 Informații Logistice:
 
-Trasey: {{ pr.route }}
+Traseu: {{ pr.route }}
 Locația Curentă: {{ pr.location }}
 Detalii suplimentare despre locație: {{ pr.location_details }}
 
