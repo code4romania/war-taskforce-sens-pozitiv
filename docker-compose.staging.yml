@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  db-senspozitiv:
+    container_name: senspozitiv-db
+    image: postgres:14
+    env_file: .env
+    ports:
+      - "5453:5432"
+    networks:
+      - internal
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+
+  redis:
+    container_name: senspozitiv-redis
+    image: redis:alpine
+    networks:
+      - internal
+
+  sens_pozitiv:
+    container_name: senspozitiv-admin
+    image: code4romania/sens-pozitiv:staging
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.scope=sens
+    env_file: .env
+    links:
+      - "db-senspozitiv:db-senspozitiv"
+    networks:
+      - internal
+    ports:
+      - "8072:8070"
+    depends_on:
+      - db-senspozitiv
+      - redis
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --include-restarting --label-enable --scope sens --cleanup
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  pgdata:
+    name: senspozitiv-pgdata
