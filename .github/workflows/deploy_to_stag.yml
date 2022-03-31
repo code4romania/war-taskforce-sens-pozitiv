@@ -38,8 +38,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./sens-pozitiv
-          file: sens-pozitiv/Dockerfile
+          context: ./sens_pozitiv
+          file: sens_pozitiv/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ env.DOCKER_IMAGE_BASE }}:staging

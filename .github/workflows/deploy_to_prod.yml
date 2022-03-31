@@ -6,7 +6,7 @@ on:
 name: Deploy
 
 env:
-  DOCKER_IMAGE_BASE: code4romania/oncologie-pediatrica
+  DOCKER_IMAGE_BASE: code4romania/sens-pozitiv
 
 jobs:
   build-dockerimage:
