@@ -48,7 +48,7 @@ urlpatterns = i18n_patterns(
     path("logout", LogoutView.as_view(), name="logout"),
     path("i18n/", include("django.conf.urls.i18n")),
     # DPD
-    path("dpd/", include("django_plotly_dash.urls")),
+    # path("dpd/", include("django_plotly_dash.urls")),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
