@@ -13,11 +13,11 @@ django-jazzmin
 django-import-export
 
 # dashboard charts
-django-plotly-dash
-dpd_components
-# enforced older version for compatibility w/ django-plotly-dash which is not dash2 compatible
-dash_bootstrap_components==0.13.0
-dpd-static-support
+# django-plotly-dash
+# dpd_components
+# # enforced older version for compatibility w/ django-plotly-dash which is not dash2 compatible
+# dash_bootstrap_components==0.13.0
+# dpd-static-support
 
 # scheduler
 django-q
