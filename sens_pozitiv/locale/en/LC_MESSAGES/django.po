@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 10:42+0200\n"
+"POT-Creation-Date: 2022-09-28 14:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,644 +90,243 @@ msgstr ""
 msgid "users"
 msgstr ""
 
-#: app_account/models.py:59 dispatch/models.py:277
+#: app_account/models.py:59 dispatch/models.py:120
 msgid "Full Name"
 msgstr ""
 
-#: dispatch/admin.py:24 dispatch/admin.py:396
-msgid "Upload Medical Files"
+#: dispatch/admin.py:14 dispatch/models.py:60
+msgid "Contacts"
 msgstr ""
 
-#: dispatch/admin.py:37 dispatch/admin.py:38 dispatch/admin.py:392
-msgid "Add Medical Assitance"
+#: dispatch/admin.py:20 dispatch/models.py:85
+msgid "Services"
 msgstr ""
 
-#: dispatch/admin.py:56 dispatch/admin.py:57 dispatch/admin.py:394
-msgid "Add Logistic & Social Assistance"
-msgstr ""
-
-#: dispatch/admin.py:61 dispatch/models.py:365
-msgid "Transport"
-msgstr ""
-
-#: dispatch/admin.py:77
-msgid "Accommodation"
-msgstr ""
-
-#: dispatch/admin.py:89
-msgid "Assistance"
-msgstr ""
-
-#: dispatch/admin.py:113 dispatch/admin.py:114 dispatch/admin.py:395
-msgid "Add Companion"
-msgstr ""
-
-#: dispatch/admin.py:130 dispatch/models.py:126
-msgid "Medical Services"
-msgstr ""
-
-#: dispatch/admin.py:195
-msgid "Age will be computed once the form is saved."
-msgstr ""
-
-#: dispatch/admin.py:214
-msgid "Assigned Clinic"
-msgstr ""
-
-#: dispatch/admin.py:245
-msgid "Logistic & Social Assistance"
-msgstr ""
-
-#: dispatch/admin.py:255
-msgid "Companions"
-msgstr ""
-
-#: dispatch/admin.py:257 dispatch/models.py:322
-msgid "Case Status"
-msgstr ""
-
-#: dispatch/admin.py:260
-msgid "NO CASE STATUS"
-msgstr ""
-
-#: dispatch/admin.py:263
-msgid "UNALLOCATED"
-msgstr ""
-
-#: dispatch/admin.py:265
-msgid "ACCEPTED"
-msgstr ""
-
-#: dispatch/admin.py:267
-msgid "TAKEN"
-msgstr ""
-
-#: dispatch/admin.py:269
-msgid "DIRECT CASE"
-msgstr ""
-
-#: dispatch/admin.py:271
-msgid "REDIRECTED"
-msgstr ""
-
-#: dispatch/admin.py:273
-msgid "NO CLINIC ASSIGNED"
-msgstr ""
-
-#: dispatch/admin.py:316 dispatch/admin.py:387
+#: dispatch/admin.py:106
 msgid "Identification"
 msgstr ""
 
-#: dispatch/admin.py:329 dispatch/admin.py:388
-msgid "Requester Data"
+#: dispatch/admin.py:117
+msgid "Treatment"
 msgstr ""
 
-#: dispatch/admin.py:343 dispatch/admin.py:389
-msgid "Diagnostic"
+#: dispatch/admin.py:130 dispatch/models.py:42
+msgid "Clinic"
 msgstr ""
 
-#: dispatch/admin.py:363 dispatch/admin.py:391
-msgid "Child Location"
+#: dispatch/admin.py:138
+msgid "Logistic"
 msgstr ""
 
-#: dispatch/admin.py:374 dispatch/admin.py:390
-msgid "Origin Medical Institution"
-msgstr ""
-
-#: dispatch/admin.py:393
-msgid "Logistical Info"
+#: dispatch/admin.py:148 dispatch/models.py:21
+msgid "Other"
 msgstr ""
 
 #: dispatch/apps.py:10
 msgid "Dispatch"
 msgstr ""
 
+#: dispatch/models.py:12
+msgid "Stays in Romania"
+msgstr ""
+
 #: dispatch/models.py:13
-msgid "Male"
+msgid "In Transit"
 msgstr ""
 
 #: dispatch/models.py:14
-msgid "Female"
-msgstr ""
-
-#: dispatch/models.py:15
-msgid "Other / Unspecified"
+msgid "Unsure"
 msgstr ""
 
 #: dispatch/models.py:18
-msgid "Solid"
+msgid "Romania"
 msgstr ""
 
-#: dispatch/models.py:18
-msgid "Hematologic"
+#: dispatch/models.py:19
+msgid "Ukraine"
 msgstr ""
 
-#: dispatch/models.py:21
-msgid "Chemotherapy"
-msgstr ""
-
-#: dispatch/models.py:22
-msgid "Surgical"
-msgstr ""
-
-#: dispatch/models.py:23
-msgid "Palliative"
-msgstr ""
-
-#: dispatch/models.py:24
-msgid "Monitoring after Treatment"
-msgstr ""
-
-#: dispatch/models.py:25
-msgid "Diagnostic Investigation"
-msgstr ""
-
-#: dispatch/models.py:26
-msgid "Supportive Treatment"
+#: dispatch/models.py:20
+msgid "Moldavia"
 msgstr ""
 
 #: dispatch/models.py:27
-msgid "Radiotherapy"
+msgid "Medical Center Name"
 msgstr ""
 
 #: dispatch/models.py:28
-msgid "Transplant Waitlist"
-msgstr ""
-
-#: dispatch/models.py:29
-msgid "Intensive Care Medicine"
-msgstr ""
-
-#: dispatch/models.py:30
-msgid "Other"
-msgstr ""
-
-#: dispatch/models.py:34
-msgid "Medical Institution"
-msgstr ""
-
-#: dispatch/models.py:35
-msgid "Ministry of Health / COSU"
-msgstr ""
-
-#: dispatch/models.py:36
-msgid "Non-Governmental Organization"
+msgid "Region"
 msgstr ""
 
 #: dispatch/models.py:37
-msgid "Person"
-msgstr ""
-
-#: dispatch/models.py:38
-msgid "Company"
-msgstr ""
-
-#: dispatch/models.py:42
-msgid "National"
+msgid "There is already a Clinic with this name and region"
 msgstr ""
 
 #: dispatch/models.py:43
-msgid "International"
-msgstr ""
-
-#: dispatch/models.py:98
-msgid "Case Pending"
-msgstr ""
-
-#: dispatch/models.py:99
-msgid "Clinic is Ready for takeover"
-msgstr ""
-
-#: dispatch/models.py:100
-msgid "Taken over by Clinic"
-msgstr ""
-
-#: dispatch/models.py:101
-msgid "Taken over previously, in person"
-msgstr ""
-
-#: dispatch/models.py:102
-msgid "Redirected"
-msgstr ""
-
-#: dispatch/models.py:106
-msgid "Unsolved"
-msgstr ""
-
-#: dispatch/models.py:107
-msgid "Solved"
-msgstr ""
-
-#: dispatch/models.py:111
-msgid "Yes"
-msgstr ""
-
-#: dispatch/models.py:112
-msgid "No"
-msgstr ""
-
-#: dispatch/models.py:120 dispatch/models.py:250
-msgid "Tumor Type"
-msgstr ""
-
-#: dispatch/models.py:131
-msgid "Clinic Name"
-msgstr ""
-
-#: dispatch/models.py:136
-msgid "City"
-msgstr ""
-
-#: dispatch/models.py:141 sens_pozitiv_site/utils.py:7
-msgid "County"
-msgstr ""
-
-#: dispatch/models.py:147
-msgid "Address"
-msgstr ""
-
-#: dispatch/models.py:151
-msgid "Hospitalization Office Email"
-msgstr ""
-
-#: dispatch/models.py:153
-msgid "Hospitalization Office Phone Number"
-msgstr ""
-
-#: dispatch/models.py:158
-msgid "Head Of Department Name"
-msgstr ""
-
-#: dispatch/models.py:162
-msgid "Head Of Department Email"
-msgstr ""
-
-#: dispatch/models.py:164
-msgid "Department Phone Number"
-msgstr ""
-
-#: dispatch/models.py:168
-msgid "Available Beds"
-msgstr ""
-
-#: dispatch/models.py:174
-msgid "Clinic"
-msgstr ""
-
-#: dispatch/models.py:175
 msgid "Clinics"
 msgstr ""
 
-#: dispatch/models.py:179
-msgid "Created At"
+#: dispatch/models.py:50
+msgid "Contact Person Name"
 msgstr ""
 
-#: dispatch/models.py:183
-msgid "Pacient First Name"
+#: dispatch/models.py:51
+msgid "Contact Person Role"
 msgstr ""
 
-#: dispatch/models.py:184
-msgid "Pacient Last Name"
+#: dispatch/models.py:52
+msgid "Contact Person Email"
 msgstr ""
 
-#: dispatch/models.py:185
-msgid "Birth Date"
+#: dispatch/models.py:53
+msgid "Contact Person Phone Number"
 msgstr ""
 
-#: dispatch/models.py:186
-msgid "Sex"
+#: dispatch/models.py:53 dispatch/models.py:96
+msgid "e.g. +40723000123"
 msgstr ""
 
-#: dispatch/models.py:188
-msgid "Birth Place"
+#: dispatch/models.py:59
+msgid "Contact"
 msgstr ""
 
-#: dispatch/models.py:188
-msgid "Birth Place: City, Country"
+#: dispatch/models.py:68
+msgid "Medication Name"
 msgstr ""
 
-#: dispatch/models.py:193
-msgid "Requester Category"
+#: dispatch/models.py:69
+msgid "Medication Quantity"
 msgstr ""
 
-#: dispatch/models.py:200
-msgid "Organization Name"
+#: dispatch/models.py:70
+msgid "Medication Details"
 msgstr ""
 
-#: dispatch/models.py:203
-msgid "Fill in only if requester is not a Person"
+#: dispatch/models.py:72
+msgid "Medical Service Type"
 msgstr ""
 
-#: dispatch/models.py:206
-msgid "Requester First Name"
+#: dispatch/models.py:73
+msgid "Medical Service Quantity"
 msgstr ""
 
-#: dispatch/models.py:211
-msgid "Requester Last Name"
+#: dispatch/models.py:74
+msgid "Medical Service Details"
 msgstr ""
 
-#: dispatch/models.py:216
-msgid "Requester Phone Number"
+#: dispatch/models.py:76
+msgid "Non-Medical Service Type"
 msgstr ""
 
-#: dispatch/models.py:218 dispatch/models.py:447
-msgid "Please include country prefix e.g. +40723000123"
+#: dispatch/models.py:77
+msgid "Non-Medical Service Quantity"
 msgstr ""
 
-#: dispatch/models.py:222
-msgid "Requester Email"
+#: dispatch/models.py:78
+msgid "Non-Medical Service Details"
 msgstr ""
 
-#: dispatch/models.py:226
-msgid "Translator Contact"
+#: dispatch/models.py:84
+msgid "Service"
 msgstr ""
 
-#: dispatch/models.py:232
-msgid "Diagnostic Class"
+#: dispatch/models.py:93
+msgid "First Name"
 msgstr ""
 
-#: dispatch/models.py:235
-msgid "Complete Diagnostic Known"
+#: dispatch/models.py:94
+msgid "Last Name"
 msgstr ""
 
-#: dispatch/models.py:237
-msgid "Complete Diagnostic"
-msgstr ""
-
-#: dispatch/models.py:238
-msgid "Date Diagnosed"
-msgstr ""
-
-#: dispatch/models.py:240
-msgid "Diagnosing Institution Name"
-msgstr ""
-
-#: dispatch/models.py:242
-msgid "Main Diagnosis (ICD-10)"
-msgstr ""
-
-#: dispatch/models.py:243
-msgid "Comorbidities (ICD-10)"
-msgstr ""
-
-#: dispatch/models.py:245
-msgid "General Problem Description"
-msgstr ""
-
-#: dispatch/models.py:246
-msgid "Describe the Child's medical issue"
-msgstr ""
-
-#: dispatch/models.py:249
-msgid "Medical Documents Checked"
-msgstr ""
-
-#: dispatch/models.py:251
-msgid "Therapy Needs"
-msgstr ""
-
-#: dispatch/models.py:252
-msgid "Other Therapy Needs"
-msgstr ""
-
-#: dispatch/models.py:253
-msgid "Current Clinical Status"
-msgstr ""
-
-#: dispatch/models.py:256
-msgid "Child Current Address"
-msgstr ""
-
-#: dispatch/models.py:257
-msgid "Child Current City"
-msgstr ""
-
-#: dispatch/models.py:258
-msgid "Child Current County"
-msgstr ""
-
-#: dispatch/models.py:259
-msgid "Child Current Country"
-msgstr ""
-
-#: dispatch/models.py:262
-msgid "Institution Name"
-msgstr ""
-
-#: dispatch/models.py:264
-msgid "Contact Person"
-msgstr ""
-
-#: dispatch/models.py:264
-msgid "Full Name of the contact person"
-msgstr ""
-
-#: dispatch/models.py:267
-msgid "Phone Number"
-msgstr ""
-
-#: dispatch/models.py:269
-msgid ""
-"Contact Person's phone number. Please include country prefix e.g. "
-"+40723000123"
-msgstr ""
-
-#: dispatch/models.py:272
+#: dispatch/models.py:95
 msgid "Email"
 msgstr ""
 
-#: dispatch/models.py:285
-msgid "Age"
+#: dispatch/models.py:96
+msgid "Phone Number"
 msgstr ""
 
-#: dispatch/models.py:294
-msgid "There is already a Pacient Request with this name, birth date and age."
+#: dispatch/models.py:99
+msgid "Treatment Schema"
 msgstr ""
 
-#: dispatch/models.py:297
+#: dispatch/models.py:100
+msgid "Available Schema"
+msgstr ""
+
+#: dispatch/models.py:100
+msgid "For how long do you have treatment available?"
+msgstr ""
+
+#: dispatch/models.py:101
+msgid "CD4 Amount"
+msgstr ""
+
+#: dispatch/models.py:101
+msgid "CD4 at last check"
+msgstr ""
+
+#: dispatch/models.py:102
+msgid "Viral Load"
+msgstr ""
+
+#: dispatch/models.py:102
+msgid "Last measured viral load"
+msgstr ""
+
+#: dispatch/models.py:103
+msgid "Other Affections"
+msgstr ""
+
+#: dispatch/models.py:103
+msgid "Other affections or life conditions"
+msgstr ""
+
+#: dispatch/models.py:104
+msgid "Medical Urgencies"
+msgstr ""
+
+#: dispatch/models.py:104
+msgid "Medical urgencies related to HIV or other"
+msgstr ""
+
+#: dispatch/models.py:110
+msgid "Route"
+msgstr ""
+
+#: dispatch/models.py:111
+msgid "Current Location"
+msgstr ""
+
+#: dispatch/models.py:112
+msgid "Current Location Details"
+msgstr ""
+
+#: dispatch/models.py:112
+msgid "County, Town and other relevant details"
+msgstr ""
+
+#: dispatch/models.py:115
+msgid "Other Details"
+msgstr ""
+
+#: dispatch/models.py:126
+msgid "There is already a Patient with this name and email"
+msgstr ""
+
+#: dispatch/models.py:135
 msgid "Patient Request"
 msgstr ""
 
-#: dispatch/models.py:298
+#: dispatch/models.py:136
 msgid "Patient Requests"
-msgstr ""
-
-#: dispatch/models.py:324
-msgid "Estimated Arrival Date"
-msgstr ""
-
-#: dispatch/models.py:326
-msgid "Hospitalization Start"
-msgstr ""
-
-#: dispatch/models.py:329
-msgid "Only with confirmation from the receiving clinic!"
-msgstr ""
-
-#: dispatch/models.py:331
-msgid "Receiving Dr Full Name"
-msgstr ""
-
-#: dispatch/models.py:332
-msgid "Comments"
-msgstr ""
-
-#: dispatch/models.py:333
-msgid "International Redirect"
-msgstr ""
-
-#: dispatch/models.py:334
-msgid "Redirect Institution"
-msgstr ""
-
-#: dispatch/models.py:335
-msgid "Specialty"
-msgstr ""
-
-#: dispatch/models.py:337
-msgid "Location"
-msgstr ""
-
-#: dispatch/models.py:337
-msgid "Location: City, Country"
-msgstr ""
-
-#: dispatch/models.py:339
-msgid "Reason"
-msgstr ""
-
-#: dispatch/models.py:342
-msgid "Medical Assistance"
-msgstr ""
-
-#: dispatch/models.py:353
-msgid "Transport Required"
-msgstr ""
-
-#: dispatch/models.py:355
-msgid ""
-"Wether national or international transportation is required for this "
-"assistence"
-msgstr ""
-
-#: dispatch/models.py:358
-msgid "Transport Status"
-msgstr ""
-
-#: dispatch/models.py:368
-msgid "Pick Up Location"
-msgstr ""
-
-#: dispatch/models.py:371 dispatch/models.py:377
-msgid "Departing from: City, Country"
-msgstr ""
-
-#: dispatch/models.py:374
-msgid "Destination Location"
-msgstr ""
-
-#: dispatch/models.py:379
-msgid "Transport Details"
-msgstr ""
-
-#: dispatch/models.py:381
-msgid "Transport Responsability"
-msgstr ""
-
-#: dispatch/models.py:383 dispatch/models.py:406 dispatch/models.py:426
-msgid "Check if the responsible is outside Dăruiește Aripi organization"
-msgstr ""
-
-#: dispatch/models.py:386
-msgid "External Transport Representantive Details"
-msgstr ""
-
-#: dispatch/models.py:391
-msgid "Accommodation Required"
-msgstr ""
-
-#: dispatch/models.py:393
-msgid "Wether accommodation is required for this assistence"
-msgstr ""
-
-#: dispatch/models.py:396
-msgid "Accommodation Status"
-msgstr ""
-
-#: dispatch/models.py:402
-msgid "Accommodation Details"
-msgstr ""
-
-#: dispatch/models.py:404
-msgid "Accomodation responsibility"
-msgstr ""
-
-#: dispatch/models.py:409
-msgid "External Accomodation Representative Details"
-msgstr ""
-
-#: dispatch/models.py:414
-msgid "Local Assistance Required"
-msgstr ""
-
-#: dispatch/models.py:414
-msgid "Wether local assistance is required"
-msgstr ""
-
-#: dispatch/models.py:417
-msgid "Assistance Status"
-msgstr ""
-
-#: dispatch/models.py:424
-msgid "Assistance Representative"
-msgstr ""
-
-#: dispatch/models.py:429
-msgid "External Assistance Representantive Details"
-msgstr ""
-
-#: dispatch/models.py:433
-msgid "Logistic & Transport"
-msgstr ""
-
-#: dispatch/models.py:442
-msgid "Companion Name"
-msgstr ""
-
-#: dispatch/models.py:443
-msgid "Companion Relationship"
-msgstr ""
-
-#: dispatch/models.py:445
-msgid "Companion Phone Number"
-msgstr ""
-
-#: dispatch/models.py:450
-msgid "Companion Other Details"
-msgstr ""
-
-#: dispatch/models.py:453
-msgid "Companion"
 msgstr ""
 
 #: sens_pozitiv_site/apps.py:8
 msgid "Site"
 msgstr ""
 
-#: sens_pozitiv_site/dash/admin_dash.py:32
-msgid "Start Date"
-msgstr ""
-
-#: sens_pozitiv_site/dash/admin_dash.py:33
-msgid "End Date"
-msgstr ""
-
-#: sens_pozitiv_site/forms.py:56
-msgid "What are the medical services the patient needs?"
-msgstr ""
-
-#: sens_pozitiv_site/models.py:7 sens_pozitiv_site/templates/form.html:5
-#: sens_pozitiv_site/templates/form.html:17 sens_pozitiv_site/views.py:45
+#: sens_pozitiv_site/models.py:7 sens_pozitiv_site/templates/form.html:19
 msgid "Patient Request Form"
 msgstr ""
 
@@ -755,12 +354,12 @@ msgstr ""
 msgid "Email templates"
 msgstr ""
 
-#: sens_pozitiv_site/settings/base.py:32
-msgid "Pedriatic Oncology Dispatcher"
+#: sens_pozitiv_site/settings/base.py:31
+msgid "Positive Sense Dispatcher"
 msgstr ""
 
-#: sens_pozitiv_site/settings/base.py:33
-msgid "POD"
+#: sens_pozitiv_site/settings/base.py:32
+msgid "PSD"
 msgstr ""
 
 #: sens_pozitiv_site/settings/base.py:154
@@ -788,27 +387,40 @@ msgid "External Form"
 msgstr ""
 
 #: sens_pozitiv_site/settings/base.py:348
-msgid "A Code4Romania solution. Find Out More"
+msgid "A Commit Global solution. Find Out More"
 msgstr ""
 
-#: sens_pozitiv_site/templates/base.html:26 sens_pozitiv_site/templates/base.html:40
-msgid "A Code for Romania project."
+#: sens_pozitiv_site/templates/base.html:29
+msgid "A Commit Global project."
 msgstr ""
 
-#: sens_pozitiv_site/templates/base.html:27
+#: sens_pozitiv_site/templates/base.html:31
 msgid "Find out more"
 msgstr ""
 
-#: sens_pozitiv_site/templates/form.html:37 sens_pozitiv_site/templates/form.html:43
+#: sens_pozitiv_site/templates/base.html:44
+msgid " Positive Sense Romania. A Commit Global project."
+msgstr ""
+
+#: sens_pozitiv_site/templates/form.html:5
+msgid "Positive Sense | Patient Request Form"
+msgstr ""
+
+#: sens_pozitiv_site/templates/form.html:39
+#: sens_pozitiv_site/templates/form.html:46
 msgid "Errors"
 msgstr ""
 
-#: sens_pozitiv_site/templates/form.html:49
+#: sens_pozitiv_site/templates/form.html:53
 msgid "Send request"
 msgstr ""
 
-#: sens_pozitiv_site/urls.py:22
+#: sens_pozitiv_site/urls.py:21
 msgid "request-form/"
+msgstr ""
+
+#: sens_pozitiv_site/utils.py:7
+msgid "County"
 msgstr ""
 
 #: sens_pozitiv_site/views.py:23
@@ -820,6 +432,14 @@ msgstr ""
 msgid ""
 "There was an error submitting your request. Please try again or contact the "
 "site administrator."
+msgstr ""
+
+#: sens_pozitiv_site/views.py:45
+msgid "PSD - Patient Request Form"
+msgstr ""
+
+#: sens_pozitiv_site/views.py:53
+msgid "PSD - Registration Form"
 msgstr ""
 
 #: templates/app_account/user_offers.html:14

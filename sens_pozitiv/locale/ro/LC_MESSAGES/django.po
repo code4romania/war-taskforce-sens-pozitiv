@@ -792,12 +792,12 @@ msgid "External Form"
 msgstr "Formular Extern"
 
 #: sens_pozitiv_site/settings/base.py:348
-msgid "A Code4Romania solution. Find Out More"
-msgstr "O soluție Code4Romania. Află mai multe"
+msgid "A Commit Global solution. Find Out More"
+msgstr "O soluție Commit Global. Află mai multe"
 
 #: sens_pozitiv_site/templates/base.html:26 sens_pozitiv_site/templates/base.html:40
-msgid "A Code for Romania project."
-msgstr "O soluție Code for Romania."
+msgid "A Commit Global project."
+msgstr "O soluție Commit Global."
 
 #: sens_pozitiv_site/templates/base.html:27
 msgid "Find out more"
