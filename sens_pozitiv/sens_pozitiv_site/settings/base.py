@@ -345,7 +345,7 @@ JAZZMIN_SETTINGS = {
             "permissions": ["auth.view_user"],
             "new_window": True,
         },
-        {"name": _("A Commit Global solution. Find Out More"), "url": "https://www.code4.ro/", "new_window": True},
+        {"name": _("A Commit Global solution. Find Out More"), "url": "https://www.commitglobal.org/", "new_window": True},
         # external url that opens in a new window (Permissions can be added)
         # {
         #     "name": "View website",
