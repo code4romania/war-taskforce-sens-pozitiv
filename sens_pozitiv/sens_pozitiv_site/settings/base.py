@@ -321,13 +321,13 @@ JAZZMIN_SETTINGS = {
     # Title on the brand, and the login screen (19 chars max)
     "site_header": ADMIN_TITLE,
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    "site_logo": "jazzmin/img/code4.svg",
+    "site_logo": "jazzmin/img/commitglobal.svg",
     "site_icon": "jazzmin/img/sprijin-de-urgenta-logo.svg",
     "site_logo_classes": "site-logo",
     # Welcome text on the login screen
     "welcome_sign": ADMIN_TITLE,
     # Copyright on the footer
-    "copyright": "Code4Romania - War Task Force",
+    "copyright": "Commit Global - War Task Force",
     # The model admin to search from the search bar, search bar omitted if excluded
     # "search_model": "donors.Donor",
     # Field name on user model that contains avatar image
@@ -345,7 +345,7 @@ JAZZMIN_SETTINGS = {
             "permissions": ["auth.view_user"],
             "new_window": True,
         },
-        {"name": _("A Code4Romania solution. Find Out More"), "url": "https://www.code4.ro/", "new_window": True},
+        {"name": _("A Commit Global solution. Find Out More"), "url": "https://www.commitglobal.org/", "new_window": True},
         # external url that opens in a new window (Permissions can be added)
         # {
         #     "name": "View website",
