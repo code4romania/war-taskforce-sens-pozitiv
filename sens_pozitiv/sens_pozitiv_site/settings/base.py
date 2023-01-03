@@ -16,6 +16,7 @@ from django.utils.translation import gettext_lazy as _
 env = environ.Env(
     # set casting, default value
     ENVIRONMENT=(str, "production"),
+    FROM_EMAIL=(str, "webmaster@localhost"),
     DEBUG=(str, "no"),
     ENABLE_DEBUG_TOOLBAR=(str, "no"),
     LANGUAGE_CODE=(str, "en"),
@@ -262,6 +263,8 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = env("EMAIL_USE_TLS") == "yes"
 EMAIL_USE_SSL = env("EMAIL_USE_SSL") == "yes"
+
+DEFAULT_FROM_EMAIL = env("FROM_EMAIL")
 
 SUPER_ADMIN_PASS = env("SUPER_ADMIN_PASS")
 SUPER_ADMIN_EMAIL = env("SUPER_ADMIN_EMAIL")
