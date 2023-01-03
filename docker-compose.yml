@@ -18,15 +18,6 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
 
-
-  redis:
-    image: redis:alpine
-    networks:
-      - internal
-    container_name: senspozitiv-redis
-    expose:
-      - "6379"
-
   sens_pozitiv:
     container_name: senspozitiv-admin
     build:
@@ -42,7 +33,6 @@ services:
       - "8070:8070"
     depends_on:
       - db-senspozitiv
-      - redis
 
 networks:
   internal:
