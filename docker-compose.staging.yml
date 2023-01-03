@@ -16,12 +16,6 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
 
-  redis:
-    container_name: senspozitiv-redis
-    image: redis:alpine
-    networks:
-      - internal
-
   sens_pozitiv:
     container_name: senspozitiv-admin
     image: code4romania/sens-pozitiv:staging
@@ -37,7 +31,6 @@ services:
       - "8072:8070"
     depends_on:
       - db-senspozitiv
-      - redis
 
   watchtower:
     image: containrrr/watchtower:latest
