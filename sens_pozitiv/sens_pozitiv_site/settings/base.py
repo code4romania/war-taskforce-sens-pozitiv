@@ -26,6 +26,7 @@ env = environ.Env(
     ENABLE_SLACK_LOGGING=(str, "no"),
     RECAPTCHA_PUBLIC_KEY=(str, ""),
     RECAPTCHA_PRIVATE_KEY=(str, ""),
+    FROM_EMAIL=(str, "webmaster@localhost"),
 )
 
 ADMIN_TITLE = _("Positive Sense Dispatcher")
@@ -262,6 +263,7 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = env("EMAIL_USE_TLS") == "yes"
 EMAIL_USE_SSL = env("EMAIL_USE_SSL") == "yes"
+FROM_EMAIL = env("FROM_EMAIL")
 
 SUPER_ADMIN_PASS = env("SUPER_ADMIN_PASS")
 SUPER_ADMIN_EMAIL = env("SUPER_ADMIN_EMAIL")
