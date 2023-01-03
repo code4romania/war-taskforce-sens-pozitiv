@@ -16,6 +16,7 @@ from django.utils.translation import gettext_lazy as _
 env = environ.Env(
     # set casting, default value
     ENVIRONMENT=(str, "production"),
+    FROM_EMAIL=(str, "webmaster@localhost"),
     DEBUG=(str, "no"),
     ENABLE_DEBUG_TOOLBAR=(str, "no"),
     LANGUAGE_CODE=(str, "en"),
